@@ -14,6 +14,10 @@
 		86F88F712B193298006C5BB5 /* MovieIMDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F88F702B193298006C5BB5 /* MovieIMDBTests.swift */; };
 		86F88F7B2B193298006C5BB5 /* MovieIMDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F88F7A2B193298006C5BB5 /* MovieIMDBUITests.swift */; };
 		86F88F7D2B193298006C5BB5 /* MovieIMDBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F88F7C2B193298006C5BB5 /* MovieIMDBUITestsLaunchTests.swift */; };
+		86F88F8B2B1932E5006C5BB5 /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 86F88F8A2B1932E5006C5BB5 /* NetworkLayer */; };
+		86F88F8E2B1A1ED6006C5BB5 /* TopRated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F88F8D2B1A1ED6006C5BB5 /* TopRated.swift */; };
+		86F88F902B1A1F84006C5BB5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F88F8F2B1A1F84006C5BB5 /* Movie.swift */; };
+		86F88F922B1A2F5C006C5BB5 /* MoviesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F88F912B1A2F5C006C5BB5 /* MoviesEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,9 @@
 		86F88F762B193298006C5BB5 /* MovieIMDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieIMDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F88F7A2B193298006C5BB5 /* MovieIMDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieIMDBUITests.swift; sourceTree = "<group>"; };
 		86F88F7C2B193298006C5BB5 /* MovieIMDBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieIMDBUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86F88F8D2B1A1ED6006C5BB5 /* TopRated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRated.swift; sourceTree = "<group>"; };
+		86F88F8F2B1A1F84006C5BB5 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		86F88F912B1A2F5C006C5BB5 /* MoviesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86F88F8B2B1932E5006C5BB5 /* NetworkLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +102,8 @@
 		86F88F5E2B193295006C5BB5 /* MovieIMDB */ = {
 			isa = PBXGroup;
 			children = (
+				86F88F932B1A2F63006C5BB5 /* Endpoint */,
+				86F88F8C2B1A1EC0006C5BB5 /* Models */,
 				86F88F5F2B193295006C5BB5 /* MovieIMDBApp.swift */,
 				86F88F612B193295006C5BB5 /* ContentView.swift */,
 				86F88F632B193298006C5BB5 /* Assets.xcassets */,
@@ -127,6 +137,23 @@
 			path = MovieIMDBUITests;
 			sourceTree = "<group>";
 		};
+		86F88F8C2B1A1EC0006C5BB5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				86F88F8D2B1A1ED6006C5BB5 /* TopRated.swift */,
+				86F88F8F2B1A1F84006C5BB5 /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		86F88F932B1A2F63006C5BB5 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				86F88F912B1A2F5C006C5BB5 /* MoviesEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +170,9 @@
 			dependencies = (
 			);
 			name = MovieIMDB;
+			packageProductDependencies = (
+				86F88F8A2B1932E5006C5BB5 /* NetworkLayer */,
+			);
 			productName = MovieIMDB;
 			productReference = 86F88F5C2B193295006C5BB5 /* MovieIMDB.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +245,9 @@
 				Base,
 			);
 			mainGroup = 86F88F532B193295006C5BB5;
+			packageReferences = (
+				86F88F892B1932E4006C5BB5 /* XCRemoteSwiftPackageReference "NetworkLayer" */,
+			);
 			productRefGroup = 86F88F5D2B193295006C5BB5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +292,9 @@
 			files = (
 				86F88F622B193295006C5BB5 /* ContentView.swift in Sources */,
 				86F88F602B193295006C5BB5 /* MovieIMDBApp.swift in Sources */,
+				86F88F902B1A1F84006C5BB5 /* Movie.swift in Sources */,
+				86F88F922B1A2F5C006C5BB5 /* MoviesEndpoint.swift in Sources */,
+				86F88F8E2B1A1ED6006C5BB5 /* TopRated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +613,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		86F88F892B1932E4006C5BB5 /* XCRemoteSwiftPackageReference "NetworkLayer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thiagomf/NetworkLayer";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		86F88F8A2B1932E5006C5BB5 /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86F88F892B1932E4006C5BB5 /* XCRemoteSwiftPackageReference "NetworkLayer" */;
+			productName = NetworkLayer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 86F88F542B193295006C5BB5 /* Project object */;
 }
