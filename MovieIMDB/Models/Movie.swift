@@ -8,6 +8,7 @@
 import Foundation
 
 struct Movie: Codable {
+    
     let adult: Bool
     let backdropPath: String
     let genreIDS: [Int]
@@ -20,6 +21,7 @@ struct Movie: Codable {
     let voteCount: Int
 
     enum CodingKeys: String, CodingKey {
+        
         case adult
         case backdropPath = "backdrop_path"
         case genreIDS = "genre_ids"

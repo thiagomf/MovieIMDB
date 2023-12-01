@@ -6,17 +6,12 @@
 //
 import NetworkLayer
 
-enum MoviesEndoint {
+enum MoviesEndpoint {
     case topRated
     case movieDetail(id: Int)
 }
 
-extension MoviesEndoint: EndPoint {
-    
-    var scheme: String {
-        return "https"
-    }
-    
+extension MoviesEndpoint: EndPoint {
     
     var host: String {
         return "api.themoviedb.org"
