@@ -11,7 +11,7 @@ import SwiftUI
 struct MovieIMDBApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MovieListView().environmentObject(MovieModel(movieService: MoviesService()))
         }
     }
 }

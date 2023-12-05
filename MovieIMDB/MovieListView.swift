@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct MovieListView: View {
+    
+    @EnvironmentObject private var model: MovieModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                ForEach(model.movies, id: \.id) { movies in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(movies.title)
+                            Text(movies.overview)
+                        }
+                        Spacer()
+                    }
+                }
+            }
+        }.task {
+            await model.getAllMovies()
+        }
     }
 }
 
