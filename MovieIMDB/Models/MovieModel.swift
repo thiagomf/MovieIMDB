@@ -13,6 +13,7 @@ class MovieModel: ObservableObject {
     
     @Published var movies: [Movie] = []
     @Published var movie : Movie? = nil
+    @Published var errorServer: RequestError?
     
     let movieService: MoviesService
     
@@ -26,7 +27,7 @@ class MovieModel: ObservableObject {
         case .success(let response):
             self.movies = response.results
         case .failure(let error):
-            print("Erro to get all movies: \(error)")
+            self.errorServer = error
         }
     }
     
@@ -36,7 +37,7 @@ class MovieModel: ObservableObject {
         case .success(let response):
             self.movie = response
         case .failure(let error):
-            print("Erro to get \(id) Movie: \(error)")
+            self.errorServer = error
         }
     }
 }

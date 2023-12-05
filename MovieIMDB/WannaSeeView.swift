@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct WannaSeeView: View {
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationStack {
+            VStack {
+                Text("Future Favorites movies")
+            }.navigationTitle("No title found")
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Label("Favorite", systemImage: "arrow.left.circle")
+                    }
+                }
+            }
+        }
     }
 }
 

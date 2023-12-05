@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct MovieView: View {
+    
+    let movie: Movie?
+    @Environment(\.dismiss) var dismiss
+    
+    init(movie: Movie? = nil) {
+        self.movie = movie
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                Text("Movie: " + String(movie?.title ?? "No title found"))
+                Text("Description: " +  String(movie?.overview ?? "No overview found"))
+            }
+            .navigationTitle(movie?.title ?? "No title found")
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Label("Favorite", systemImage: "arrow.left.circle")
+                    }
+                }
+            }
+            Spacer()
+        }
     }
 }
 
