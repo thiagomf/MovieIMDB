@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "networklayer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/thiagomf/NetworkLayer",
+      "state" : {
+        "branch" : "main",
+        "revision" : "56cd768072facf39abba4c64e7a96f8fcc160c55"
+      }
+    }
+  ],
+  "version" : 2
+}
