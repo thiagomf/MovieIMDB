@@ -40,7 +40,8 @@ struct MovieListView: View {
                         clickAction = .goToView(movie)
                     }.fullScreenCover(isPresented: $isPresented) {
                         WannaSeeView()
-                    }                }
+                    }
+                }
             }.navigationTitle("WannaSee")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -58,12 +59,12 @@ struct MovieListView: View {
         .sheet(item: $clickAction, content: { click in
             switch click {
             case .goToView(let movie):
-                MovieView(movie: movie)
+                MovieView(movieSelected: movie)
             }
         })
     }
 }
 
 #Preview {
-    MovieListView()
+    MovieListView().environmentObject(MovieModel(movieService: MoviesService()))
 }

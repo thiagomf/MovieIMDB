@@ -12,7 +12,7 @@ import NetworkLayer
 class MovieModel: ObservableObject {
     
     @Published var movies: [Movie] = []
-    @Published var movie : Movie? = nil
+    @Published var movie : SelectedMovie? = nil
     @Published var errorServer: RequestError?
     
     let movieService: MoviesService

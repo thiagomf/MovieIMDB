@@ -9,20 +9,24 @@ import SwiftUI
 
 struct MovieView: View {
     
-    let movie: Movie?
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject private var model: MovieModel
+    let movieSelected: Movie?
     
-    init(movie: Movie? = nil) {
-        self.movie = movie
+    init(movieSelected: Movie? = nil) {
+        self.movieSelected = movieSelected
     }
     
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Movie: " + String(movie?.title ?? "No title found"))
-                Text("Description: " +  String(movie?.overview ?? "No overview found"))
+                Text("Movie: " + String(movieSelected?.title ?? "No title found"))
+                Text("Description: " +  String(movieSelected?.overview ?? "No overview found"))
+                Text("Adult: " + String(model.movie?.adult ?? false))
+                Text("Language: " + String(model.movie?.originalLanguage ?? ""))
+                Text("Popularity" + String(model.movie?.popularity ?? 0.0))
             }
-            .navigationTitle(movie?.title ?? "No title found")
+            .navigationTitle(movieSelected?.title ?? "No title found")
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -32,6 +36,8 @@ struct MovieView: View {
                         Label("Favorite", systemImage: "arrow.left.circle")
                     }
                 }
+            }.task {
+                await model.getIDMovie(id: self.movieSelected?.id ?? 0)
             }
             Spacer()
         }

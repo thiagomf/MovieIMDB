@@ -10,7 +10,7 @@ import NetworkLayer
 
 protocol MoviesServiceable {
     func getTopRated() async -> Result <TopRated, RequestError>
-    func getMovieDetail(id: Int) async -> Result <Movie, RequestError>
+    func getMovieDetail(id: Int) async -> Result <SelectedMovie, RequestError>
 }
 
 struct MoviesService: MoviesServiceable {
@@ -20,8 +20,8 @@ struct MoviesService: MoviesServiceable {
                                  responseModel: TopRated.self)
     }
     
-    func getMovieDetail(id: Int) async -> Result<Movie, RequestError> {
+    func getMovieDetail(id: Int) async -> Result<SelectedMovie, RequestError> {
         return await NetworkLayer().sendRequest(endPoint: MoviesEndpoint.movieDetail(id: id),
-                                                responseModel: Movie.self)
+                                                responseModel: SelectedMovie.self)
     }
 }
