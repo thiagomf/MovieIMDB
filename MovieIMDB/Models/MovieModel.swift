@@ -12,7 +12,7 @@ import NetworkLayer
 class MovieModel: ObservableObject {
     
     @Published var movies: [Movie] = []
-    @Published var movie : SelectedMovie? = nil
+    @Published var selected : SelectedMovie? = nil
     @Published var errorServer: RequestError?
     
     let movieService: MoviesService
@@ -35,7 +35,7 @@ class MovieModel: ObservableObject {
         let result = await movieService.getMovieDetail(id: id)
         switch result {
         case .success(let response):
-            self.movie = response
+            self.selected = response
         case .failure(let error):
             self.errorServer = error
         }

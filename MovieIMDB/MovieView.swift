@@ -20,18 +20,24 @@ struct MovieView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                
                 Text("Movie: " + String(movieSelected?.title ?? "No title found"))
                 Text("Description: " +  String(movieSelected?.overview ?? "No overview found"))
-                Text("Adult: " + String(model.movie?.adult ?? false))
-                Text("Language: " + String(model.movie?.originalLanguage ?? ""))
-                Text("Popularity" + String(model.movie?.popularity ?? 0.0))
+                if(model.selected == nil) {
+                    Text("Entrou no carregando")
+                    ProgressView("Carregando...")
+                } else {
+                    Text("Adult: " + String(model.selected?.adult ?? true))
+                    Text("Language: " + String(model.selected?.originalLanguage ?? ""))
+                    Text("Popularity" + String(model.selected?.popularity ?? 0.0))
+                }
             }
             .navigationTitle(movieSelected?.title ?? "No title found")
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        dismiss()
+                       
                     }) {
                         Label("Favorite", systemImage: "arrow.left.circle")
                     }

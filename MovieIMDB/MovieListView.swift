@@ -42,21 +42,29 @@ struct MovieListView: View {
                         WannaSeeView()
                     }
                 }
-            }.navigationTitle("WannaSee")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        self.isPresented.toggle()
-                    }) {
-                        Label("Favorite", systemImage: "arrow.left.circle")
+            }.overlay(content: {
+                if model.movies.isEmpty {
+                    ProgressView("Carregando...")
+                }
+            })
+            .navigationTitle("WannaSee")
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: {
+                            self.isPresented.toggle()
+                        }) {
+                            Label("Favorite", systemImage: "arrow.left.circle")
+                        }
                     }
                 }
-            }
-            .task {
-                await model.getAllMovies()
-            }
-        }
-        .sheet(item: $clickAction, content: { click in
+                .task {
+                    await model.getAllMovies()
+                }
+        }.sheet(item: $clickAction, onDismiss: {
+            
+            model.selected = nil
+            
+        }, content: { click in
             switch click {
             case .goToView(let movie):
                 MovieView(movieSelected: movie)
