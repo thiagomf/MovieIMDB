@@ -24,18 +24,15 @@ struct MovieListView: View {
     @EnvironmentObject private var model: MovieModel
     @State private var clickAction: Actions?
     @State private var isPresented = false
+    @State private var page = 0
     
     var body: some View {
         
         NavigationStack {
-            List {
+            ScrollView {
                 ForEach(model.movies) { movie in
                     HStack {
-                        VStack(alignment: .leading) {
-                            Text(movie.title)
-                            Text(movie.overview)
-                        }
-                        Spacer()
+                        MovieCardUIView(movie: movie).padding(2)
                     }.onTapGesture {
                         clickAction = .goToView(movie)
                     }.fullScreenCover(isPresented: $isPresented) {
@@ -44,7 +41,7 @@ struct MovieListView: View {
                 }
             }.overlay(content: {
                 if model.movies.isEmpty {
-                    ProgressView("Carregando...")
+                    ProgressView("Carregando...").frame(width: 250)
                 }
             })
             .navigationTitle("WannaSee")
@@ -56,9 +53,8 @@ struct MovieListView: View {
                             Label("Favorite", systemImage: "arrow.left.circle")
                         }
                     }
-                }
-                .task {
-                    await model.getAllMovies()
+                }.task {
+                    await model.getBestMovies(page: 1)
                 }
         }.sheet(item: $clickAction, onDismiss: {
             

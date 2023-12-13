@@ -24,7 +24,7 @@ final class MovieIMDBTests: XCTestCase {
     
     func testLoadTopRatedMovies() async {
         let serviceMock = MoviesServiceMock()
-        let response = await serviceMock.getTopRated()
+        let response = await serviceMock.getTopRated(page: 0)
         
         switch response {
         case .success(let topRated): XCTAssertNotEqual(topRated.results.count, 0)
@@ -36,7 +36,7 @@ final class MovieIMDBTests: XCTestCase {
 
 final class MoviesServiceMock: Mockable, MoviesServiceable {
     
-    func getTopRated() async -> Result<MovieIMDB.TopRated, RequestError> {
+    func getTopRated(page: Int) async -> Result<MovieIMDB.TopRated, RequestError> {
         return .success(loadJSON(filename: "TopRatedResponse", type: TopRated.self))
     }
     

@@ -5,9 +5,10 @@
 //  Created by Thiago M Faria on 01/12/23.
 //
 import NetworkLayer
+import Foundation
 
 enum MoviesEndpoint {
-    case topRated
+    case topRated(page: Int)
     case movieDetail(id: Int)
 }
 
@@ -19,7 +20,7 @@ extension MoviesEndpoint: EndPoint {
     
     var path: String {
         switch self {
-        case .topRated :
+        case .topRated(_) :
             return "/3/movie/top_rated"
         case .movieDetail(let id):
             return "/3/movie/\(id)"
@@ -51,4 +52,10 @@ extension MoviesEndpoint: EndPoint {
         }
     }
     
+    var queryItems: [URLQueryItem]? {
+        switch self {
+        case.topRated(let page): return [.init(name: "page", value: "\(page)")]
+        case .movieDetail: return nil
+        }
+    }
 }

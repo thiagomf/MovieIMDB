@@ -23,7 +23,7 @@ struct WannaSeeView: View {
                     Button(action: {
                         dismiss()
                     }) {
-                        Label("Favorite", systemImage: "arrow.left.circle")
+                        Label("Favorite", systemImage: "heart.circle")
                     }
                 }
             }

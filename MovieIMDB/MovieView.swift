@@ -11,6 +11,7 @@ struct MovieView: View {
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject private var model: MovieModel
+    @State private var isFavorite: Bool = false
     let movieSelected: Movie?
     
     init(movieSelected: Movie? = nil) {
@@ -37,9 +38,12 @@ struct MovieView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                       
-                    }) {
-                        Label("Favorite", systemImage: "arrow.left.circle")
+                        self.isFavorite.toggle()
+                    }){
+                        Image(systemName: "heart.circle")
+                                    .renderingMode(.original)
+                                    .foregroundColor(Color(.red))
+                                    .font(.system(size: 25))
                     }
                 }
             }.task {

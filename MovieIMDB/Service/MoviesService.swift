@@ -9,14 +9,14 @@ import Foundation
 import NetworkLayer
 
 protocol MoviesServiceable {
-    func getTopRated() async -> Result <TopRated, RequestError>
+    func getTopRated(page: Int) async -> Result <TopRated, RequestError>
     func getMovieDetail(id: Int) async -> Result <SelectedMovie, RequestError>
 }
 
 struct MoviesService: MoviesServiceable {
 
-    func getTopRated() async -> Result<TopRated, RequestError> {
-        return await NetworkLayer().sendRequest(endPoint: MoviesEndpoint.topRated,
+    func getTopRated(page: Int = 1) async -> Result<TopRated, RequestError> {
+        return await NetworkLayer().sendRequest(endPoint: MoviesEndpoint.topRated(page: page),
                                  responseModel: TopRated.self)
     }
     

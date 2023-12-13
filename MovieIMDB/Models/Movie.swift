@@ -42,3 +42,24 @@ struct Movie: Codable, Identifiable {
         case voteCount = "vote_count"
     }
 }
+
+extension Movie {
+    static func mock() -> Movie {
+        self.init(adult: true,
+                  backdropPath: "/tmU7GeKVybMWFButWEGl2M4GeiP.jpg",
+                  genreIDS: [18,
+                             80],
+                  id: 238,
+                  originalLanguage: "en",
+                  originalTitle: "The Godfather",
+                  overview: "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
+                  popularity: 170.318,
+                  posterPath: "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+                  releaseDate: "1972-03-14",
+                  title: "The Godfather",
+                  video: false,
+                  voteAverage: 8.709,
+                  voteCount: 19086)
+        
+    }
+}
