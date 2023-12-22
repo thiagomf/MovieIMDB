@@ -11,7 +11,14 @@ import SwiftUI
 struct MovieIMDBApp: App {
     var body: some Scene {
         WindowGroup {
-            MovieListView().environmentObject(MovieModel(movieService: MoviesService()))
+            TabView {
+                
+                MovieListView().environmentObject(MovieModel(movieService: MoviesService()))
+                    .tabItem { Label("Movies", systemImage: "movieclapper") }
+                
+                WannaSeeView().tabItem { Label("Favorites", systemImage: "heart") }
+                
+            }
         }
     }
 }

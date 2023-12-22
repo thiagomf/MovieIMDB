@@ -14,19 +14,19 @@ struct MovieCardUIView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20, style: .continuous).fill(.black)
+            
             HStack {
                 
                 VStack {
-                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)"),
+                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(String(describing: movie.posterPath ?? ""))"),
                                content: { image in
-                        image.resizable()
-                        
+                        image.resizable().scaledToFit()
                     }, placeholder: {
                         ProgressView()
-                    }).frame(width:150, height:200).clipShape(RoundedRectangle(cornerRadius: 20.0)).padding(5)
+                    }).frame(height:200).clipShape(RoundedRectangle(cornerRadius: 20.0))
                     
                     StarsUIView(rating: movie.voteAverage/2, maxRating: 5).padding().frame(height: 50)
-                }
+                }.padding()
                 
                 VStack(alignment: .leading) {
                     Text(movie.title)
@@ -44,9 +44,10 @@ struct MovieCardUIView: View {
                         .font(.subheadline)
                         .foregroundColor(.gray)
                     Spacer()
-                }.multilineTextAlignment(.leading).padding()
+                }.multilineTextAlignment(.leading).padding([.top, .bottom, .trailing])
             }
-        }.frame(width: 390, height: 300)
+            
+        }.frame(height: 280)
     }
 }
 

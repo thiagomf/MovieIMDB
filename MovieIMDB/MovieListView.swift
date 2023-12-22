@@ -7,65 +7,38 @@
 
 import SwiftUI
 
-enum Actions: Identifiable {
+private class DebouncedState<Value>: ObservableObject {
+    @Published var currentValue: Value
+    @Published var debouncedValue: Value
     
-    case goToView(Movie)
-    
-    var id: Int {
-        switch self {
-        case .goToView(_):
-            return 1
-        }
+    init(initialValue: Value, delay: Double = 1) {
+        _currentValue = Published(initialValue: initialValue)
+        _debouncedValue = Published(initialValue: initialValue)
+        $currentValue
+            .debounce(for: .seconds(delay), scheduler: RunLoop.main)
+            .assign(to: &$debouncedValue)
     }
 }
 
 struct MovieListView: View {
     
     @EnvironmentObject private var model: MovieModel
-    @State private var clickAction: Actions?
-    @State private var isPresented = false
-    @State private var page = 0
+    
+    @StateObject private var searchTerm = DebouncedState(initialValue: "")
     
     var body: some View {
-        
         NavigationStack {
-            ScrollView {
-                ForEach(model.movies) { movie in
-                    HStack {
-                        MovieCardUIView(movie: movie).padding(2)
-                    }.onTapGesture {
-                        clickAction = .goToView(movie)
-                    }.fullScreenCover(isPresented: $isPresented) {
-                        WannaSeeView()
-                    }
-                }
-            }.overlay(content: {
-                if model.movies.isEmpty {
-                    ProgressView("Carregando...").frame(width: 250)
-                }
-            })
-            .navigationTitle("WannaSee")
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button(action: {
-                            self.isPresented.toggle()
-                        }) {
-                            Label("Favorite", systemImage: "arrow.left.circle")
-                        }
-                    }
-                }.task {
-                    await model.getBestMovies(page: 1)
-                }
-        }.sheet(item: $clickAction, onDismiss: {
-            
-            model.selected = nil
-            
-        }, content: { click in
-            switch click {
-            case .goToView(let movie):
-                MovieView(movieSelected: movie)
+            if model.searchIsActive {
+                SearchedMovies()
+            } else {
+                TopRated()
             }
-        })
+        }.navigationTitle("WannaSee")
+        .searchable(text: $searchTerm.currentValue, placement: .automatic, prompt: "I wanna see...")
+        .onChange(of: searchTerm.debouncedValue) { text in
+            print(text)
+            model.callSearchingMovie(movieText: text)
+        }
     }
 }
 

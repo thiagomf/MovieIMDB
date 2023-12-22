@@ -13,7 +13,7 @@ extension String {
         return self.count
     }
     
-    func maxLength(_ length: Int = 210) -> String {
+    func maxLength(_ length: Int = 250) -> String {
         var str = self
         let nsString = str as NSString
         if nsString.length >= length {

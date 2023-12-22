@@ -9,8 +9,6 @@ import SwiftUI
 
 struct WannaSeeView: View {
     
-    @Environment(\.dismiss) var dismiss
-    
     var body: some View {
         
         NavigationStack {
@@ -18,15 +16,6 @@ struct WannaSeeView: View {
                 Text("Future Favorites movies")
             }.navigationTitle("No title found")
             .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Label("Favorite", systemImage: "heart.circle")
-                    }
-                }
-            }
         }
     }
 }

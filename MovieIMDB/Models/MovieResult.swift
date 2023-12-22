@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct TopRated: Codable {
+struct MovieResult: Codable {
     let page: Int
     let totalPages: Int
     let totalResults: Int

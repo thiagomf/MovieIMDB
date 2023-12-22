@@ -9,19 +9,25 @@ import Foundation
 import NetworkLayer
 
 protocol MoviesServiceable {
-    func getTopRated(page: Int) async -> Result <TopRated, RequestError>
+    func getTopRated(page: Int) async -> Result <MovieResult, RequestError>
     func getMovieDetail(id: Int) async -> Result <SelectedMovie, RequestError>
+    func getSearchMovie(name: String) async -> Result <MovieResult, RequestError>
 }
 
 struct MoviesService: MoviesServiceable {
 
-    func getTopRated(page: Int = 1) async -> Result<TopRated, RequestError> {
+    func getTopRated(page: Int = 1) async -> Result<MovieResult, RequestError> {
         return await NetworkLayer().sendRequest(endPoint: MoviesEndpoint.topRated(page: page),
-                                 responseModel: TopRated.self)
+                                 responseModel: MovieResult.self)
     }
     
     func getMovieDetail(id: Int) async -> Result<SelectedMovie, RequestError> {
         return await NetworkLayer().sendRequest(endPoint: MoviesEndpoint.movieDetail(id: id),
                                                 responseModel: SelectedMovie.self)
+    }
+    
+    func getSearchMovie(name: String) async -> Result<MovieResult, RequestError> {
+        return await NetworkLayer().sendRequest(endPoint: MoviesEndpoint.searchMovie(name: name),
+                                                responseModel: MovieResult.self)
     }
 }

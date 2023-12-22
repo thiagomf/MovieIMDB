@@ -36,8 +36,8 @@ final class MovieIMDBTests: XCTestCase {
 
 final class MoviesServiceMock: Mockable, MoviesServiceable {
     
-    func getTopRated(page: Int) async -> Result<MovieIMDB.TopRated, RequestError> {
-        return .success(loadJSON(filename: "TopRatedResponse", type: TopRated.self))
+    func getTopRated(page: Int) async -> Result<MovieIMDB.MovieResult, RequestError> {
+        return .success(loadJSON(filename: "TopRatedResponse", type: MovieResult.self))
     }
     
     func getMovieDetail(id: Int) async -> Result<MovieIMDB.SelectedMovie, RequestError> {
