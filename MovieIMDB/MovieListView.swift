@@ -35,9 +35,9 @@ struct MovieListView: View {
             }
         }.navigationTitle("WannaSee")
         .searchable(text: $searchTerm.currentValue, placement: .automatic, prompt: "I wanna see...")
-        .onChange(of: searchTerm.debouncedValue) { text in
-            print(text)
-            model.callSearchingMovie(movieText: text)
+        .onChange(of: searchTerm.debouncedValue) { oldState, newState in
+            print(newState)
+            model.callSearchingMovie(movieText: newState)
         }
     }
 }

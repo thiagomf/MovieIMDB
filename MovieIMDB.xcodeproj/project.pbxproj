@@ -10,13 +10,16 @@
 		860EBADB2B1A3D080046B41E /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860EBADA2B1A3D080046B41E /* MoviesService.swift */; };
 		86933F2B2B320E300084C3BF /* TopRated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86933F2A2B320E300084C3BF /* TopRated.swift */; };
 		86933F2D2B323E1C0084C3BF /* SearchedMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86933F2C2B323E1C0084C3BF /* SearchedMovies.swift */; };
-		86933F2F2B34D88A0084C3BF /* CarouselUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86933F2E2B34D8890084C3BF /* CarouselUIView.swift */; };
 		86BDDCBC2B27BB5D00D71E88 /* MovieCardUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BDDCBB2B27BB5D00D71E88 /* MovieCardUIView.swift */; };
 		86BDDCBD2B27BC0900D71E88 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C227A82B20E1D100B97229 /* Mockable.swift */; };
 		86BDDCBE2B27BCDC00D71E88 /* TopRatedResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 86C227A42B20E13B00B97229 /* TopRatedResponse.json */; };
 		86BDDCBF2B27BCE000D71E88 /* MovieSelectedResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 86C227A62B20E16500B97229 /* MovieSelectedResponse.json */; };
 		86BDDCC32B28FAF100D71E88 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BDDCC22B28FAF100D71E88 /* String+Extension.swift */; };
 		86BDDCC52B2A366700D71E88 /* StarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BDDCC42B2A366700D71E88 /* StarUIView.swift */; };
+		86BEA38C2B3625CF00E0E73C /* GenreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BEA38B2B3625CF00E0E73C /* GenreList.swift */; };
+		86BEA38E2B362A5A00E0E73C /* CarouselUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BEA38D2B362A5A00E0E73C /* CarouselUIView.swift */; };
+		86BEA3902B362AF400E0E73C /* DiscoveringUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BEA38F2B362AF400E0E73C /* DiscoveringUIView.swift */; };
+		86BEA3922B36390A00E0E73C /* GenreUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BEA3912B36390A00E0E73C /* GenreUIView.swift */; };
 		86C227932B1F6C5000B97229 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C227922B1F6C5000B97229 /* MovieModel.swift */; };
 		86C227992B1F78DD00B97229 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C227982B1F78DD00B97229 /* MovieListView.swift */; };
 		86C2279C2B1FBBCB00B97229 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C2279B2B1FBBCB00B97229 /* MovieView.swift */; };
@@ -59,10 +62,13 @@
 		860EBADA2B1A3D080046B41E /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		86933F2A2B320E300084C3BF /* TopRated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRated.swift; sourceTree = "<group>"; };
 		86933F2C2B323E1C0084C3BF /* SearchedMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedMovies.swift; sourceTree = "<group>"; };
-		86933F2E2B34D8890084C3BF /* CarouselUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselUIView.swift; sourceTree = "<group>"; };
 		86BDDCBB2B27BB5D00D71E88 /* MovieCardUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardUIView.swift; sourceTree = "<group>"; };
 		86BDDCC22B28FAF100D71E88 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		86BDDCC42B2A366700D71E88 /* StarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarUIView.swift; sourceTree = "<group>"; };
+		86BEA38B2B3625CF00E0E73C /* GenreList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreList.swift; sourceTree = "<group>"; };
+		86BEA38D2B362A5A00E0E73C /* CarouselUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselUIView.swift; sourceTree = "<group>"; };
+		86BEA38F2B362AF400E0E73C /* DiscoveringUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveringUIView.swift; sourceTree = "<group>"; };
+		86BEA3912B36390A00E0E73C /* GenreUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreUIView.swift; sourceTree = "<group>"; };
 		86C227922B1F6C5000B97229 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		86C227982B1F78DD00B97229 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		86C2279B2B1FBBCB00B97229 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
@@ -127,7 +133,8 @@
 				86BDDCC42B2A366700D71E88 /* StarUIView.swift */,
 				86933F2A2B320E300084C3BF /* TopRated.swift */,
 				86933F2C2B323E1C0084C3BF /* SearchedMovies.swift */,
-				86933F2E2B34D8890084C3BF /* CarouselUIView.swift */,
+				86BEA38D2B362A5A00E0E73C /* CarouselUIView.swift */,
+				86BEA3912B36390A00E0E73C /* GenreUIView.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -178,6 +185,7 @@
 				86F88F932B1A2F63006C5BB5 /* Endpoint */,
 				86F88F8C2B1A1EC0006C5BB5 /* Models */,
 				86F88F5F2B193295006C5BB5 /* MovieIMDBApp.swift */,
+				86BEA38F2B362AF400E0E73C /* DiscoveringUIView.swift */,
 				86C227982B1F78DD00B97229 /* MovieListView.swift */,
 				86C2279B2B1FBBCB00B97229 /* MovieView.swift */,
 				86C2279D2B1FC6E900B97229 /* WannaSeeView.swift */,
@@ -222,6 +230,7 @@
 				86F88F8F2B1A1F84006C5BB5 /* Movie.swift */,
 				86C227922B1F6C5000B97229 /* MovieModel.swift */,
 				86C227A12B20DE7700B97229 /* SelectedMovie.swift */,
+				86BEA38B2B3625CF00E0E73C /* GenreList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,19 +383,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86BEA3902B362AF400E0E73C /* DiscoveringUIView.swift in Sources */,
 				86C227932B1F6C5000B97229 /* MovieModel.swift in Sources */,
 				86C2279E2B1FC6E900B97229 /* WannaSeeView.swift in Sources */,
 				86F88F602B193295006C5BB5 /* MovieIMDBApp.swift in Sources */,
+				86BEA38C2B3625CF00E0E73C /* GenreList.swift in Sources */,
 				86BDDCC52B2A366700D71E88 /* StarUIView.swift in Sources */,
 				860EBADB2B1A3D080046B41E /* MoviesService.swift in Sources */,
 				86C227A22B20DE7700B97229 /* SelectedMovie.swift in Sources */,
 				86C2279C2B1FBBCB00B97229 /* MovieView.swift in Sources */,
+				86BEA38E2B362A5A00E0E73C /* CarouselUIView.swift in Sources */,
 				86F88F902B1A1F84006C5BB5 /* Movie.swift in Sources */,
+				86BEA3922B36390A00E0E73C /* GenreUIView.swift in Sources */,
 				86BDDCBD2B27BC0900D71E88 /* Mockable.swift in Sources */,
 				86933F2D2B323E1C0084C3BF /* SearchedMovies.swift in Sources */,
 				86BDDCC32B28FAF100D71E88 /* String+Extension.swift in Sources */,
 				86BDDCBC2B27BB5D00D71E88 /* MovieCardUIView.swift in Sources */,
-				86933F2F2B34D88A0084C3BF /* CarouselUIView.swift in Sources */,
 				86C227992B1F78DD00B97229 /* MovieListView.swift in Sources */,
 				86933F2B2B320E300084C3BF /* TopRated.swift in Sources */,
 				86F88F922B1A2F5C006C5BB5 /* MoviesEndpoint.swift in Sources */,
@@ -560,7 +572,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,7 +603,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

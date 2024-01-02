@@ -19,6 +19,10 @@ class MovieModel: ObservableObject {
     @Published var selected : SelectedMovie? = nil
     @Published var errorServer: RequestError?
     
+    @Published var genres: [Genre] = []
+    @Published var trendings: [Movie] = []
+    @Published var discovering: [Movie] = []
+    
     var pageId = 1
 
     enum PagingState {
@@ -99,6 +103,36 @@ class MovieModel: ObservableObject {
         switch result {
         case .success(let response):
             self.searchedMovie = response.results
+        case .failure(let error):
+            self.errorServer = error
+        }
+    }
+    
+    func getGenre(name: String) async {
+        let result = await movieService.getGenre()
+        switch result {
+        case .success(let response):
+            self.genres = response.genres
+        case .failure(let error):
+            self.errorServer = error
+        }
+    }
+    
+    func getTrendings() async {
+        let result = await movieService.getTrendings()
+        switch result {
+        case .success(let response):
+            self.trendings = Array(response.results[0..<5])
+        case .failure(let error):
+            self.errorServer = error
+        }
+    }
+    
+    func getDiscovering(year: String) async {
+        let result = await movieService.getDiscovering(year: year)
+        switch result {
+        case .success(let response):
+            self.discovering = response.results
         case .failure(let error):
             self.errorServer = error
         }

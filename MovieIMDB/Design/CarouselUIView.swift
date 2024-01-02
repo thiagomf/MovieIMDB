@@ -2,106 +2,117 @@
 //  CarouselUIView.swift
 //  MovieIMDB
 //
-//  Created by Thiago M Faria on 21/12/23.
+//  Created by Thiago M Faria on 22/12/23.
 //
 
-
-//não funciona adequadamente
 import SwiftUI
 
-struct CarouselUIView: View {
+struct CarouselUIView<Content: View, TitleContent: View, Movie: RandomAccessCollection>: View where Movie: MutableCollection, Movie.Element: Identifiable {
     
-    let cards = [Card(),Card(),Card(),Card(),Card(),Card()]
+    var showsIndicator: ScrollIndicatorVisibility = .hidden
+    var showPagingControll: Bool = true
+    var disablePagingInteraction: Bool = false
+    var titleScrollSpeed: CGFloat = 0.6
+    var pagingControlSpacing: CGFloat = 20
+    var spacing: CGFloat = 10
     
-    @State private var screenWidth: CGFloat = 0
-    @State private var cardHeight: CGFloat = 0
-    let widthScale = 0.75
-    let cardAspectRatio = 1.5
-    @State var activeCardIndex = 0
-    @State var dragOffSet: CGFloat = 0
+    @Binding var data: Movie
+    @ViewBuilder var content: (Binding<Movie.Element>) -> Content
+    @ViewBuilder var titleContent: (Binding<Movie.Element>) -> TitleContent
+    
+    @State private var activeID: Int?
     
     var body: some View {
-        GeometryReader { reader in
-            ZStack {
-                ForEach(cards.indices, id: \.self) { index in
-                    VStack {
-                        Text("Hello")
-                    }
-                    .frame(width: screenWidth * widthScale,
-                           height: cardHeight)
-                    .background(cards[index].colors[index % cards.count])
-                    .overlay(Color.white.opacity(1 - cardScale(for: index, proportion: 0.4)))
-                    .cornerRadius(20)
-                    .offset(x: cardOffSet(for: index))
-                    .scaleEffect(x: cardScale(for: index), y: cardScale(for: index))
-                    .zIndex(-Double(index))
-                    .gesture(DragGesture().onChanged { value in
-                        self.dragOffSet = value.translation.width
-                    }.onEnded { value in
-                        let threshold = screenWidth * 0.2
-                        withAnimation {
-                            if value.translation.width < -threshold {
-                                activeCardIndex = min(activeCardIndex + 1, cards.count - 1)
-                            } else 
-                            if value.translation.width > threshold {
-                                activeCardIndex = max(activeCardIndex - 1, 0)
+        VStack(spacing: pagingControlSpacing) {
+            ScrollView(.horizontal) {
+                HStack(spacing: spacing) {
+                    ForEach($data) { item in
+                        ZStack {
+                            content(item)
+                            titleContent(item)
+                                .frame(maxWidth: .infinity)
+                                .visualEffect { content, geometryProxy in
+                                content.offset(x: scrollOffset(geometryProxy))
                             }
                         }
-                        
-                        withAnimation{
-                            dragOffSet = 0
-                        }
-                    })
+                        .containerRelativeFrame(.horizontal)
+                    }
                 }
-            }.onAppear() {
-                screenWidth = reader.size.width
-                cardHeight = screenWidth * widthScale * cardAspectRatio
+                .scrollTargetLayout()
             }
-            .offset(x: 16, y: 30)
+            .scrollIndicators(showsIndicator)
+            .scrollTargetBehavior(.viewAligned)
+            .scrollPosition(id: $activeID)
+            
+            if showPagingControll {
+                PagingControl(numberOfPages: data.count, activePage: activePage) { value in
+                    if let index = value as? Movie.Index, data.indices.contains(index) {
+                        if let id = data[index].id as? Int {
+                            withAnimation(.snappy(duration: 0.35, extraBounce: 0)) {
+                                activeID = id
+                            }
+                        }
+                    }
+                }
+                .disabled(disablePagingInteraction)
+            }
         }
     }
     
-    func cardScale(for index: Int, proportion: CGFloat = 0.2) -> CGFloat {
-        let adjustedIndex = index - activeCardIndex
-        if index >= activeCardIndex {
-            let progress = min(abs(dragOffSet)/(screenWidth/2), 1)
-            return 1 - proportion * CGFloat(adjustedIndex) + (dragOffSet < 0 ? proportion * progress : -proportion * progress)
+    var activePage: Int {
+        
+        if let index = data.firstIndex(where: { $0.id as? Int == activeID}) as? Int {
+            return index
         }
-        return 1
+        
+        return 0
     }
     
-    func cardOffSet(for index: Int) -> CGFloat {
-        let adjustedIndex = index - activeCardIndex
-        let cardSpacing: CGFloat = 60 / cardScale(for: index)
-        let initialOffset = cardSpacing * CGFloat(adjustedIndex)
-        let progress = min(abs(dragOffSet)/(screenWidth/2), 1)
-        let maxCardMovement = cardSpacing
-        if adjustedIndex < 0 {
-            if dragOffSet > 0 && index == activeCardIndex - 1 {
-                let distanteToMove = (initialOffset + screenWidth) * progress
-                return -screenWidth + distanteToMove
-            } else {
-                return -screenWidth
-            }
-        } else if index > activeCardIndex {
-            let distanceToMove = progress * maxCardMovement
-            return initialOffset - (dragOffSet < 0 ? distanceToMove : -distanceToMove)
-        } else {
-            if dragOffSet < 0 {
-                return dragOffSet
-            } else {
-                let distanceToMove = maxCardMovement * progress
-                return initialOffset - (dragOffSet < 0 ? distanceToMove : -distanceToMove)
-            }
+    func scrollOffset(_ proxy: GeometryProxy) -> CGFloat {
+        let minX = proxy.bounds(of: .scrollView)?.minX ?? 0
+        return -minX * min(titleScrollSpeed, 1)
+    }
+}
+
+struct PagingControl: UIViewRepresentable {
+    
+    var numberOfPages: Int
+    var activePage: Int
+    var onPageChange: (Int) -> ()
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(onPageChange: onPageChange)
+    }
+    
+    func makeUIView(context: Context) -> UIPageControl {
+        let view = UIPageControl()
+        view.currentPage = activePage
+        view.numberOfPages = numberOfPages
+        view.backgroundStyle = .prominent
+        view.currentPageIndicatorTintColor = UIColor(Color.primary)
+        view.pageIndicatorTintColor = UIColor.placeholderText
+        view.addTarget(context.coordinator, action: #selector(Coordinator.onPageUpdate(control:)), for: .valueChanged)
+        return view
+    }
+    
+    func updateUIView(_ uiView: UIPageControl, context: Context) {
+        uiView.numberOfPages = numberOfPages
+        uiView.currentPage = activePage
+    }
+    
+    class Coordinator: NSObject {
+        var onPageChange: (Int) -> ()
+        init(onPageChange: @escaping(Int)-> Void) {
+            self.onPageChange = onPageChange
+        }
+
+        @objc
+        func onPageUpdate(control: UIPageControl) {
+            onPageChange(control.currentPage)
         }
     }
 }
 
-#Preview {
-    CarouselUIView()
-}
-
-struct Card {
-    let id = UUID()
-    let colors: [Color] = [.red, .blue, .yellow, .orange, .green, .purple, .cyan, .mint, .pink]
-}
+//#Preview {
+//    ContentView()
+//}

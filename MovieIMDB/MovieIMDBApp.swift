@@ -12,11 +12,14 @@ struct MovieIMDBApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
+                DiscoveringUIView().environmentObject(MovieModel(movieService: MoviesService()))
+                    .tabItem { Label("Discovery", systemImage: "popcorn") }
                 
                 MovieListView().environmentObject(MovieModel(movieService: MoviesService()))
-                    .tabItem { Label("Movies", systemImage: "movieclapper") }
+                    .tabItem { Label("Movies", systemImage: "magnifyingglass") }
                 
-                WannaSeeView().tabItem { Label("Favorites", systemImage: "heart") }
+                WannaSeeView()
+                    .tabItem { Label("Favorites", systemImage: "heart") }
                 
             }
         }
