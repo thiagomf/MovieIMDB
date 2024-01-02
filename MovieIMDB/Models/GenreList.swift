@@ -2,12 +2,12 @@
 //  GenreList.swift
 //  MovieIMDB
 //
-//  Created by Thiago M Faria on 22/12/23.
+//  Created by Thiago M Faria on 02/01/24.
 //
 
 import Foundation
 
-// MARK: - GenreList
+// MARK: - Genre Lsit
 struct GenreList: Codable {
     let genres: [Genre]
 }

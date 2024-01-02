@@ -3,4 +3,335 @@
    uuid = "EDC0A3A0-C514-4912-8218-56E4B730D3CA"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24DED824-242E-4B09-9857-5D616B8D0A04"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieIMDB/Models/MovieModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "getDiscovering()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E078A36E-BC09-455E-888C-79D9D9939779"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieIMDB/Models/MovieModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "getDiscovering()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E078A36E-BC09-455E-888C-79D9D9939779 - f75fa840733cbd39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for MovieIMDB.MovieModel.getDiscovering(year: Swift.String) async -&gt; ()"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Models/MovieModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "E078A36E-BC09-455E-888C-79D9D9939779 - f75fa840733cbd39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for MovieIMDB.MovieModel.getDiscovering(year: Swift.String) async -&gt; ()"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Models/MovieModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "E078A36E-BC09-455E-888C-79D9D9939779 - f75fa840733cbd39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for MovieIMDB.MovieModel.getDiscovering(year: Swift.String) async -&gt; ()"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Models/MovieModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  uuid = "E078A36E-BC09-455E-888C-79D9D9939779 - 51e14c48a0cded92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for MovieIMDB.MovieModel.getDiscovering() async -&gt; ()"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Models/MovieModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "E078A36E-BC09-455E-888C-79D9D9939779 - a2a99a16a2fb7867"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for MovieIMDB.MovieModel.getDiscovering() async -&gt; ()"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Models/MovieModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "E078A36E-BC09-455E-888C-79D9D9939779 - aefcda04e8005f90"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for MovieIMDB.MovieModel.getDiscovering() async -&gt; ()"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Models/MovieModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "36899459-9A3A-499D-B0DB-890E32471728"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieIMDB/Models/MovieModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "getDiscovering()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1E89E4A-A5BE-4CA3-B26B-67638385CE22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieIMDB/Design/TrendingsUIView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "B1E89E4A-A5BE-4CA3-B26B-67638385CE22 - 92a2286588e235f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async -&gt; () in MovieIMDB.TrendingsUIView.body.getter : some"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Design/TrendingsUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "B1E89E4A-A5BE-4CA3-B26B-67638385CE22 - 92807bb98997ebef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #2 @Sendable () async -&gt; () in MovieIMDB.TrendingsUIView.body.getter : some"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Design/TrendingsUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "B1E89E4A-A5BE-4CA3-B26B-67638385CE22 - d5441a6862c8f208"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async -&gt; () in MovieIMDB.TrendingsUIView.body.getter : some"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Design/TrendingsUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E16D265-9D19-427B-91AB-8463308ACD14"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieIMDB/Models/MovieModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "getTrendings()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6E16D265-9D19-427B-91AB-8463308ACD14 - c8b1a137fa5853ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for MovieIMDB.MovieModel.getTrendings() async -&gt; ()"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Models/MovieModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "6E16D265-9D19-427B-91AB-8463308ACD14 - 54a4d9722922cefd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for MovieIMDB.MovieModel.getTrendings() async -&gt; ()"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Models/MovieModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "6E16D265-9D19-427B-91AB-8463308ACD14 - 6238974ab9648dec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for MovieIMDB.MovieModel.getTrendings() async -&gt; ()"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Models/MovieModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96547C51-37C6-46DD-9434-C7CDED92C08A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieIMDB/Service/MoviesService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getDiscovering(year:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "96547C51-37C6-46DD-9434-C7CDED92C08A - a4c7019467081c0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for MovieIMDB.MoviesService.getDiscovering(year: Swift.String) async -&gt; Swift.Result&lt;MovieIMDB.MovieResult, NetworkLayer.RequestError&gt;"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Service/MoviesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "96547C51-37C6-46DD-9434-C7CDED92C08A - 66070bf9e706491f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for MovieIMDB.MoviesService.getDiscovering(year: Swift.String) async -&gt; Swift.Result&lt;MovieIMDB.MovieResult, NetworkLayer.RequestError&gt;"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Service/MoviesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "96547C51-37C6-46DD-9434-C7CDED92C08A - f00d96187ae1d80c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for MovieIMDB.MoviesService.getDiscovering(year: Swift.String) async -&gt; Swift.Result&lt;MovieIMDB.MovieResult, NetworkLayer.RequestError&gt;"
+                  moduleName = "MovieIMDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thiagomfaria/Documents/MovieIMDB/MovieIMDB/Service/MoviesService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

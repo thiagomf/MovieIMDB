@@ -28,11 +28,12 @@ struct CarouselUIView<Content: View, TitleContent: View, Movie: RandomAccessColl
                 HStack(spacing: spacing) {
                     ForEach($data) { item in
                         ZStack {
-                            content(item)
-                            titleContent(item)
-                                .frame(maxWidth: .infinity)
-                                .visualEffect { content, geometryProxy in
-                                content.offset(x: scrollOffset(geometryProxy))
+                            content(item).overlay(alignment: .bottomTrailing) {
+                                titleContent(item)
+                                    .frame(maxWidth: .infinity)
+                                    .visualEffect { content, geometryProxy in
+                                        content.offset(x: scrollOffset(geometryProxy))
+                                    }
                             }
                         }
                         .containerRelativeFrame(.horizontal)
@@ -105,14 +106,10 @@ struct PagingControl: UIViewRepresentable {
         init(onPageChange: @escaping(Int)-> Void) {
             self.onPageChange = onPageChange
         }
-
+        
         @objc
         func onPageUpdate(control: UIPageControl) {
             onPageChange(control.currentPage)
         }
     }
 }
-
-//#Preview {
-//    ContentView()
-//}

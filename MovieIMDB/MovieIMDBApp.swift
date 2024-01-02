@@ -16,7 +16,7 @@ struct MovieIMDBApp: App {
                     .tabItem { Label("Discovery", systemImage: "popcorn") }
                 
                 MovieListView().environmentObject(MovieModel(movieService: MoviesService()))
-                    .tabItem { Label("Movies", systemImage: "magnifyingglass") }
+                    .tabItem { Label("Search", systemImage: "magnifyingglass") }
                 
                 WannaSeeView()
                     .tabItem { Label("Favorites", systemImage: "heart") }

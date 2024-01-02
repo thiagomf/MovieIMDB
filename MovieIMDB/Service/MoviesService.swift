@@ -13,6 +13,7 @@ protocol MoviesServiceable {
     func getMovieDetail(id: Int) async -> Result <SelectedMovie, RequestError>
     func getSearchMovie(name: String) async -> Result <MovieResult, RequestError>
     func getGenre() async -> Result<GenreList, RequestError>
+    func getDiscovering(year: String) async -> Result<MovieResult, RequestError>
     func getTrendings() async -> Result<MovieResult, RequestError>
 }
 

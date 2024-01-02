@@ -13,8 +13,9 @@ struct MovieCardUIView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 20, style: .continuous).fill(.black)
             
+            RoundedRectangle(cornerRadius: 20, style: .continuous).fill(.black)
+    
             HStack {
                 
                 VStack {

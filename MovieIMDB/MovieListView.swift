@@ -29,11 +29,11 @@ struct MovieListView: View {
     var body: some View {
         NavigationStack {
             if model.searchIsActive {
-                SearchedMovies()
+                SearchedMovies().navigationTitle("Search")
             } else {
-                TopRated()
+                TopRated().navigationTitle("Search")
             }
-        }.navigationTitle("WannaSee")
+        }
         .searchable(text: $searchTerm.currentValue, placement: .automatic, prompt: "I wanna see...")
         .onChange(of: searchTerm.debouncedValue) { oldState, newState in
             print(newState)

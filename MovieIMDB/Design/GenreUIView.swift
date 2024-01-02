@@ -7,35 +7,72 @@
 
 import SwiftUI
 
-struct GenreUIView: View {
-    var body: some View {
-        
-        Text("Hello")
-//        ScrollView {
-//            HStack {
-//                ForEach() { item in
-//                    BoxView()
-//                }
-//            }
-//        }.padding(20)
-    }
+enum Suit: String {
+    case Action = "Action"
+    case Adventure = "Adventure"
+    case Animation = "Animation"
+    case Comedy = "Comedy"
+    case Crime = "Crime"
+    case Documentary = "Documentary"
+    case Drama = "Drama"
+    case Family = "Family"
+    case Fantasy = "Fantasy"
+    case History = "History"
+    case Horror = "Horror"
+    case Music = "Music"
+    case Mystery = "Mystery"
+    case Romance = "Romance"
+    case Scify = "Science Fiction"
+    case TV = "Tv Movie"
+    case Thriller = "Thriller"
+    case War = "War"
+    case Western = "Western"
 }
 
-struct BoxView: View {
+struct GenreUIView: View {
+    
+    @EnvironmentObject private var model: MovieModel
+    
     var body: some View {
-        VStack {
-            Image("")
-                .resizable()
-                .cornerRadius(12)
-                .frame(width: 80, height: 80)
-            
-            Text("Genero")
-                .font(.subheadline)
-                .fontWeight(.bold)
+        ScrollView(.horizontal) {
+            LazyHStack(spacing: 10) {
+                ForEach(model.genres, id: \.id) { genre in
+                    BoxView(genero: genre.name)
+                }
+            }.padding([.leading, .trailing], 5)
+            .padding([.top, .bottom], 10)
+        }.scrollIndicators(.hidden)
+        .overlay(content: {
+            if model.genres.isEmpty {
+                ProgressView().frame(width: 250)
+            }
+        })
+        .task {
+            await model.getGenre()
         }
     }
 }
 
-#Preview {
-    GenreUIView()
+struct BoxView: View {
+    
+    @State var genero: String
+    
+    var body: some View {
+        
+        Button(action: {
+                print("sign up bin tapped \(genero)")
+            }) {
+                Text(genero)
+                    .frame(minWidth: 100, maxWidth: .infinity)
+                    .font(.system(size: 18))
+                    .padding()
+                    .foregroundColor(.black)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black, lineWidth: 2)
+                )
+            }
+            .background(Color.white)
+            
+    }
 }

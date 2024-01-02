@@ -108,7 +108,7 @@ class MovieModel: ObservableObject {
         }
     }
     
-    func getGenre(name: String) async {
+    func getGenre() async {
         let result = await movieService.getGenre()
         switch result {
         case .success(let response):
@@ -128,7 +128,8 @@ class MovieModel: ObservableObject {
         }
     }
     
-    func getDiscovering(year: String) async {
+    func getDiscovering() async {
+        let year = "2024"
         let result = await movieService.getDiscovering(year: year)
         switch result {
         case .success(let response):
@@ -137,4 +138,5 @@ class MovieModel: ObservableObject {
             self.errorServer = error
         }
     }
+
 }
