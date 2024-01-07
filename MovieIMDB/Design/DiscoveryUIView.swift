@@ -13,6 +13,7 @@ struct DiscoveryUIView: View {
     
     var body: some View {
         VStack {
+            Text("Discovery in 2024").font(.title.bold()).frame(maxWidth: .infinity, alignment: .leading).padding()
             ForEach(model.discovering) { discover in
                 MovieCardUIView(movie: discover).padding(5)
             }
